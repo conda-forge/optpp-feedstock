@@ -1,0 +1,22 @@
+diff --git a/newmat11/precisio.h b/newmat11/precisio.h
+index 3956dc7..b106c55 100644
+--- a/newmat11/precisio.h
++++ b/newmat11/precisio.h
+@@ -9,13 +9,16 @@
+ #include <cstdlib>
+ #endif
+ 
++#ifdef _STANDARD_                 // standard library available
++#include <limits>
++#endif
++
+ #ifdef use_namespace
+ namespace NEWMAT {
+ #endif
+ 
+ #ifdef _STANDARD_                 // standard library available
+ 
+-#include<limits>
+ using namespace std;
+ 	
+ class FloatingPointPrecision

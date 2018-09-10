@@ -16,7 +16,7 @@ build:
     - blas_{{ variant }}  # [not win]
   # msvc is unsupported, but maybe we can add a custom cmake script later
   # investigate failure on osx too with clang/libc++
-  skip: true  # [not linux]
+  skip: true  # [win]
 
 requirements:
   build:

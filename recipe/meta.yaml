@@ -9,6 +9,8 @@ source:
   fn: optpp-{{ version }}.tar.gz
   url: https://software.sandia.gov/opt++/downloads/optpp-{{ version }}.tar.gz
   sha256: 7a0c8ba5e15d5e74f94b08f5dc65a13d64d2f7bbd1acbc153c09dd2425eb66cd
+  patches:
+    - limits.patch
 
 build:
   number: 200
@@ -16,7 +18,7 @@ build:
     - blas_{{ variant }}  # [not win]
   # msvc is unsupported, but maybe we can add a custom cmake script later
   # investigate failure on osx too with clang/libc++
-  skip: true  # [not linux]
+  skip: true  # [win]
 
 requirements:
   build:

@@ -14,7 +14,7 @@ source:
     - limits.patch
 
 build:
-  number: 200
+  number: 1200
   features:
     - blas_{{ variant }}  # [not win]
   # msvc is unsupported, but maybe we can add a custom cmake script later

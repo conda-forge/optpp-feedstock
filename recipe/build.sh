@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export LDFLAGS="${LDFLAGS} -Wl,-no-undefined"
 ./configure \
   --prefix=$PREFIX --includedir=$PREFIX/include/opt++ \
   --disable-static --enable-shared

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#autoreconf -i
-export LDFLAGS="${LDFLAGS} -Wl,-no-undefined -lblas -lnewmat"
+autoreconf -vfi
+export LDFLAGS="${LDFLAGS} -Wl,-no-undefined"
 ./configure \
   --prefix=$PREFIX --includedir=$PREFIX/include/opt++ \
   --disable-static --enable-shared

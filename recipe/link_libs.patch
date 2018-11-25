@@ -1,0 +1,28 @@
+diff --git a/src/PDS/Makefile.am b/src/PDS/Makefile.am
+index dec72ea..161ecdb 100644
+--- a/src/PDS/Makefile.am
++++ b/src/PDS/Makefile.am
+@@ -20,6 +20,10 @@ if HAVE_MPI
+ libpds_la_SOURCES += pdsglb.c pdsgop.c pdswap.c
+ endif
+ 
++if HAVE_BLAS
++libpds_la_LIBADD = $(BLAS_LIBS)
++endif
++
+ # Provide location of additional include files.
+ 
+ INCLUDES = -I$(top_srcdir)/newmat11 -I$(top_srcdir)/include
+diff --git a/src/Utils/Makefile.am b/src/Utils/Makefile.am
+index 545b0f4..2f41613 100644
+--- a/src/Utils/Makefile.am
++++ b/src/Utils/Makefile.am
+@@ -13,6 +13,8 @@ if !HAVE_BLAS
+ libutils_la_SOURCES += linalg.c
+ endif
+ 
++libutils_la_LIBADD = @top_builddir@/lib/libnewmat.la
++
+ # Provide location of additional include files.
+ 
+ INCLUDES = -I$(top_srcdir)/newmat11 -I$(top_srcdir)/include

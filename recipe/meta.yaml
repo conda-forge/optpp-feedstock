@@ -12,6 +12,8 @@ source:
   patches:
     # FTBFS on libc++ (osx)
     - limits.patch
+    # missing linking to newmat, blas
+    - link_libs.patch
 
 build:
   number: 1200
@@ -25,6 +27,10 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - autoconf  # [unix]
+    - automake  # [unix]
+    - libtool  # [unix]
+    - make  # [unix]
   host:
     - blas 1.1 {{ variant }}  # [not win]
     - openblas

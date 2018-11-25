@@ -1,5 +1,6 @@
 #!/bin/sh
 
+autoreconf -i
 export LDFLAGS="${LDFLAGS} -Wl,-no-undefined"
 ./configure \
   --prefix=$PREFIX --includedir=$PREFIX/include/opt++ \

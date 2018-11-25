@@ -1,7 +1,6 @@
 #!/bin/sh
 
-autoreconf -vfi
-#export LDFLAGS="${LDFLAGS} -Wl,-no-undefined"
+autoreconf -i
 ./configure \
   --prefix=$PREFIX --includedir=$PREFIX/include/opt++ \
   --disable-static --enable-shared || cat config.log

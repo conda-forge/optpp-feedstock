@@ -1,5 +1,4 @@
 {% set version = "2.4" %}
-{% set variant = "openblas" %}
 
 package:
   name: optpp
@@ -16,9 +15,8 @@ source:
     - link_libs.patch
 
 build:
-  number: 1200
+  number: 1201
   features:
-    - blas_{{ variant }}  # [not win]
   # msvc is unsupported, but maybe we can add a custom cmake script later
   skip: true  # [win]
 
@@ -31,11 +29,9 @@ requirements:
     - automake  # [unix]
     - libtool  # [unix]
   host:
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas
+    - libblas
+    - libcblas
   run:
-    - blas 1.1 {{ variant }}  # [not win]
-    - openblas
 
 test:
   commands:

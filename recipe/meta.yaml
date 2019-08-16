@@ -7,7 +7,7 @@ package:
 source:
   fn: optpp-{{ version }}.tar.gz
   url: https://software.sandia.gov/opt++/downloads/optpp-{{ version }}.tar.gz
-  sha256: 7a0c8ba5e15d5e74f94b08f5dc65a13d64d2f7bbd1acbc153c09dd2425eb66cd
+  sha256: b452cdf8aa770088e26b49e07b5cf13ae5972832c032abcad07a56baa2a588ef
   patches:
     # FTBFS on libc++ (osx)
     - limits.patch
@@ -15,7 +15,7 @@ source:
     - link_libs.patch
 
 build:
-  number: 1201
+  number: 1202
   features:
   # msvc is unsupported, but maybe we can add a custom cmake script later
   skip: true  # [win]

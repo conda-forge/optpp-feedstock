@@ -15,7 +15,7 @@ source:
     - link_libs.patch
 
 build:
-  number: 1201
+  number: 1202
   features:
   # msvc is unsupported, but maybe we can add a custom cmake script later
   skip: true  # [win]
